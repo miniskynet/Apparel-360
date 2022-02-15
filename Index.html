@@ -2,25 +2,49 @@
    <html lang="en">
    <meta charset="UTF-8">
    <head>
-   <div style="background-color: aquamarine;">
+   <style>
+		body{
+			background-image: url('green.png');
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+   </style>
    <title>Apparel 360</title>
-   </div>
    <link rel="stylesheet" href="common_style.css">
    </head>
    <body>
-<a href="Login.html"><button id="login_button" >Login</button></a>
-<a href="Signup.html"><button id="signup_button" >Signup</button></a>
+   <div class="box">
+		<a href="Login.html"><button id="login_button" class="indexbtn">Login</button></a>
+		<a href="Signup.html"><button id="signup_button" class="indexbtn2">Signup</button></a>
+   </div>	
   <div>
-    <div id="description_div">
-      <h1>Apparel 360</h1>
-      <p>Apparel 360 is an augmented reality based web-application
+    <div class="description">
+      <h1><center>Apparel 360</center></h1>
+      <p><b>Apparel 360 is an augmented reality based web-application
       which helps customers preview tailor-made clothes cast onto a 3D model</p>
-	  <img src = "Images/Black-shirt1.png" width="300" height="300">
 	  <br>
       <button class="welcomepage_button">Proceed as guest</button>
     </div>
-    <div id="images-div"></div>
-
-  </div>
+	<div class="index_images">
+		<div class="index_img">
+			<img src = "Black-shirt.png" width="150" height="165" class="round_images">
+		</div>
+		<div class="index_img1">
+			<img src = "Black-shirt1.png" width="150" height="165" class="round_images">
+		</div>
+		<div class="index_img2">
+			<img src = "Red-Shirt.jpg" width="330" height="310" class="round_images">
+		</div>
+	</div>
+		<div class="index_img3">
+			<img src = "Black-shirt2.png" width="330" height="310" class="round_images">
+		</div>
+		<div class="index_img4">
+			<img src = "Grey-shirt.png" width="150" height="165" class="round_images">
+		</div>	
+		<div class="index_img5">
+			<img src = "White-shirt.png" width="150" height="165" class="round_images">
+		</div>	
    </body>
    </html>
