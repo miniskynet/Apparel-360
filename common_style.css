@@ -265,3 +265,34 @@ button:hover {
     width: 100%;
   }
 }
+	.option{
+	  width:120px;
+	  height:100px;
+	  border: 1px solid #000000;
+	  margin: 30px;
+	  margin-bottom: 2px;
+	  
+	}
+	
+	.container{
+
+	  margin-left:260px;
+	  width: 45%;
+	  
+	  
+	  
+	}
+	
+	
+	.option:hover{
+	  opacity: 0.8;  
+   }
+   
+   body {
+     background-color:#98FB98;
+}
+
+p {
+	margin-left: 320px;
+
+}
