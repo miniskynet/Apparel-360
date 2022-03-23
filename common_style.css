@@ -93,6 +93,13 @@
   width: 13%;
   padding: 10px;
 }
+.proimg{
+  display: block;
+  margin-left: 70%;
+  width: 50%;
+  border-radius: 50%;
+  
+}
 
 .index_img1 img {
   margin-top: 12px;
@@ -180,6 +187,10 @@ img.avatar {
 
 .container {
   padding: 16px;
+}
+
+.container1 {
+	padding: 16px;
 }
 
 span.psw {
@@ -275,6 +286,16 @@ button:hover {
 	}
 	
 	.container{
+
+	  margin-left:260px;
+	  width: 45%;
+	  
+	  
+	  
+	}
+
+	
+	.container1{
 
 	  margin-left:260px;
 	  width: 45%;
