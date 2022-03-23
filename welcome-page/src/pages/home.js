@@ -14,7 +14,7 @@ class Home extends React.Component{
       <p><b>Apparel 360 is an augmented reality based web-application
       which helps customers preview tailor-made clothes cast onto a 3D model</b></p>
 	  <br/>
-      <button class="welcomepage_button">Proceed as guest</button>
+      <a href="assest/HomePage.html"><button class="welcomepage_button">Proceed as guest</button></a>
     </div>
 	<div class="index_images">
 		<div class="index_img">
