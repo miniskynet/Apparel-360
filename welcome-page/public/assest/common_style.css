@@ -94,6 +94,14 @@
   padding: 10px;
 }
 
+.proimg{
+  display: block;
+  margin-left: 70%;
+  width: 50%;
+  border-radius: 50%;
+  
+}
+
 .index_img1 img {
   margin-top: 12px;
 }
@@ -282,6 +290,16 @@ button:hover {
 	  
 	  
 	}
+
+  .container1{
+
+	  margin-left:260px;
+	  width: 45%;
+	  
+	  
+	  
+	}
+	
 	
 	
 	.option:hover{
@@ -295,4 +313,9 @@ button:hover {
 p {
 	margin-left: 320px;
 
+}
+.proimg{
+	position: relative;
+   top: -17px;
+   right: -320px;
 }

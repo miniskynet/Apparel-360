@@ -317,3 +317,9 @@ p {
 	margin-left: 320px;
 
 }
+
+.proimg{
+	position: relative;
+   top: -17px;
+   right: -320px;
+}
