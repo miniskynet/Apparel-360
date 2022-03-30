@@ -10,9 +10,9 @@ class Home extends React.Component{
    </div>	
   <div>
     <div class="description">
-      <h1><center>Apparel 360</center></h1>
-      <p><b>Apparel 360 is an augmented reality based web-application
-      which helps customers preview tailor-made clothes cast onto a 3D model</b></p>
+      <h1>Apparel 360</h1>
+      <p><b>Apparel 360 is an augmented reality<br/> based web-application
+      which helps<br/> customers preview tailor-made clothes<br/> cast onto a 3D model</b></p>
 	  <br/>
       <a href="assest/HomePage.html"><button class="welcomepage_button">Proceed as guest</button></a>
     </div>

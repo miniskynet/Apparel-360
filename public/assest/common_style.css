@@ -59,19 +59,14 @@
 }
 
 .description{
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	top: 20%;
 	margin: auto;
 	padding-top: 170px;
-	width: 22%;
+	width: 40%;
 	position: relative;
-	margin-left: 130px;
-	left: 0;
-	top: 0;
-	height: 50%;
-	text-align: center;
+	margin-left: 20px;
+	text-align: 20px;
+  padding-left: 75px;
 }
 
 .round_images{
@@ -79,19 +74,24 @@
 }
 
 .index_img {
-  float: left;
+  float: right;
   width: 13%;
   padding: 10px;
+  position: absolute;
+  top: 75px;
+  right: 800px;
 }
-
 .index_img img {
   margin-top: 12px;
 }
 
 .index_img1 {
-  float: left;
+  float: right;
   width: 13%;
   padding: 10px;
+  position: absolute;
+  top: 75px;
+  right: 600px;
 }
 
 .proimg{
@@ -102,24 +102,30 @@
   
 }
 
-.index_img1 img {
+.index_img1 img{
   margin-top: 12px;
 }
 
 .index_img2 {
-  float: left;
+  float: right;
   width: 25%;
   padding: 10px;
+  position: absolute;
+  top: 85px;
+  right: 210px;
 }
 
 .index_img2 img {
-  margin-top: 10px;
+ margin-top: 0;;
 }
 
 .index_img3 {
-  float: left;
+  float: right;
   width: 27%;
   padding: 10px;
+  position: absolute;
+  top: 280px;
+  right: 585px;
 }
 
 .index_img3 img {
@@ -127,19 +133,25 @@
 }
 
 .index_img4 {
-  float: left;
+  float: right;
   width: 15%;
   padding: 10px;
+  position: absolute;
+  top: 435px;
+  right: 365px;
 }
 
 .index_img4 img {
-  margin-top: 12px;
+  margin-top: 0px;
 }
 
 .index_img5 {
-  float: left;
+  float: right;
   width: 25%;
   padding: 10px;
+  position: absolute;
+  top: 423px;
+  right: 35px;
 }
 
 .index_img5 img {
@@ -147,9 +159,10 @@
 }
 
 .index_images:after {
-  content: "";
-  display: table;
-  clear: both;
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 50%;
+  margin-top: 100px;
 }
 ----------------------------------------------------
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -229,7 +242,7 @@ hr {
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  background-color: #151617;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -295,6 +308,7 @@ button:hover {
 
 	  margin-left:260px;
 	  width: 45%;
+    color: white;
 	  
 	  
 	  
@@ -307,15 +321,28 @@ button:hover {
    }
    
    body {
-     background-color:#98FB98;
+     background-color:#5A7670;
 }
 
-p {
-	margin-left: 320px;
-
-}
 .proimg{
 	position: relative;
    top: -17px;
    right: -320px;
+}
+h1 {
+  font-size: 50px;
+  color: white;
+  
+}
+p {
+  font-size: 20px;
+  color: white;
+}
+.b1 {
+  position: absolute;
+  top: 730px;
+  right: 1045px;
+}
+h2 {
+  color: white;
 }
