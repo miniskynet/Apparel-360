@@ -142,6 +142,138 @@ while(1):
             my_canvas.pack(pady= 20)
 
             root.mainloop()
+            elif (r>=245 and r<=255)and (g>=222 and g<=255) and (b>=179 and b<=224):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="brown" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r>=139 and r<=244) and (g>=69 and g<=184) and (b>=19 and b<=143):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="beige" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="khaki" )
+
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r>=245 and r<=255) and (g>=218 and g<=255) and (b>=173 and b<=250):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="navy" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="brown" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r>=112 and r<=176) and (g>=128 and g<=196) and (b>=144 and b<=222):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            my_canvas.create_rectangle(50, 420, 300, 350, fill="gray" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r>=230 and r<=255) and (g>=230 and g<=255) and (b>=240 and b<=255):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="gray" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==105 and g==105 and b==105):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==128 and g==128 and b==128):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==169 and g==169 and b==169):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            my_canvas.create_rectangle(50, 420, 300, 350, fill="brown" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==192 and g==192 and b==192):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="navy" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="brown" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==211 and g==211 and b==211):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==220 and g==220 and b==220):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==245 and g==245 and b==245):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="khaki" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="black" )
+            my_canvas.create_rectangle(50, 420, 300, 350, fill="gray" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==255 and g==255 and b==255):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="beige" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="navy" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="gray" )
+            my_canvas.create_rectangle(50, 420, 300, 350, fill="black" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+
+        elif (r==0 and g==0 and b==0):
+            my_canvas.create_rectangle(50, 120, 300, 50, fill="white" )
+            my_canvas.create_rectangle(50, 220, 300, 150, fill="gray" )
+            my_canvas.create_rectangle(50, 320, 300, 250, fill="navy" )
+            
+            my_canvas.pack(pady= 20)
+
+            root.mainloop()
+            
 
         
       
