@@ -1,5 +1,41 @@
 <html lang="en">
-<form action="signaction_page.php" method="post" style="border:1px solid #ccc">
+  <script>
+    var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+function submitform(){
+  var username;
+  var password;
+  var firstname;
+  var lastname;
+  var companyname;
+  var companydetail;
+  var email;
+
+  var raw = JSON.stringify({
+    "username" : document.getElementById("username").value,
+    "password" : document.getElementById("password").value,
+    "fname" : document.getElementById("firstname").value,
+    "lname" : document.getElementById("lastname").value,
+    "comname" : document.getElementById("companyname").value,
+    "comdetail" : document.getElementById("companydetail").value,
+    "email" : document.getElementById("email").value  
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("http://localhost:5000/SignUp", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+}
+</script>
+<form method="post" style="border:1px solid #ccc" onsubmit = "submitform()"></form>
 <title>Apparel 360</title>
 <link rel="stylesheet" href="common_style.css">
   <div class="container">

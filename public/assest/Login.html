@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="common_style.css">
 
+ 
+
 </head>
+<script>
+  function loginform(){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var username;
+    var password;
+
+    var raw = JSON.stringify({
+      "username": document.getElementById("username").value,
+      "password" : document.getElementById("password").value
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:5000/LogIn", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  
+  }
+
+</script>
 <body>
 
 <h2>Login Form</h2>
