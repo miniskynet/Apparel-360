@@ -9,8 +9,13 @@ from tkinter import *
 import os
 app = Flask(__name__)
 CORS(app)
-@app.route("/generateColourPalattes", methods=['GET', 'POST'])
+@app.route("/generateColourPalattes", methods=['POST'])
 def getColourPalatte():
+  img_path = request.get_json(force=True)['rgbValues']
+  print(img_path)
+  r = img_path[0]
+  g = img_path[1]
+  b = img_path[2]
 
   #Creating argument parser to take image path from command line
   # ap = argparse.ArgumentParser()
@@ -19,70 +24,70 @@ def getColourPalatte():
   # img_path = args['image']
 
   #Reading the image with opencv
-  img_path = request.file('image')
-  img_path.save(os.path.join(os.getcwd, 'static'), img_path.filename)
-  img = cv2.imread(os.path.join(os.getcwd, f'static/{img_path.filename}'))
+  # img_path = request.file('image')
+  # img_path.save(os.path.join(os.getcwd, 'static'), img_path.filename)
+  # img = cv2.imread(os.path.join(os.getcwd, f'static/{img_path.filename}'))
 
   #declaring global variables (are used later on)
-  clicked = False
-  r = g = b = xpos = ypos = 0
+  # clicked = False
+  # r = g = b = xpos = ypos = 0
 
   #Reading csv file with pandas and giving names to each column
-  index=["color","color_name","hex","R","G","B"]
-  csv = pd.read_csv('C:/Users/Asus/Desktop/color_recommend/colors.csv', names=index, header=None)
+  # index=["color","color_name","hex","R","G","B"]
+  # csv = pd.read_csv('C:/Users/Asus/Desktop/color_recommend/colors.csv', names=index, header=None)
 
   #function to calculate minimum distance from all colors and get the most matching color
-  def getColorName(R,G,B):
-      minimum = 10000
-      for i in range(len(csv)):
-          d = abs(R- int(csv.loc[i,"R"])) + abs(G- int(csv.loc[i,"G"]))+ abs(B- int(csv.loc[i,"B"]))
-          if(d<=minimum):
-              minimum = d
-              cname = csv.loc[i,"color_name"]
-      return cname
+  # def getColorName(R,G,B):
+  #     minimum = 10000
+  #     for i in range(len(csv)):
+  #         d = abs(R- int(csv.loc[i,"R"])) + abs(G- int(csv.loc[i,"G"]))+ abs(B- int(csv.loc[i,"B"]))
+  #         if(d<=minimum):
+  #             minimum = d
+  #             cname = csv.loc[i,"color_name"]
+  #     return cname
 
   #function to get x,y coordinates of mouse double click
-  def draw_function(event, x,y,flags,param):
-      if event == cv2.EVENT_LBUTTONDBLCLK:
-          global b,g,r,xpos,ypos, clicked
-          clicked = True
-          xpos = x
-          ypos = y
-          b,g,r = img[y,x]
-          b = int(b)
-          g = int(g)
-          r = int(r)
+  # def draw_function(event, x,y,flags,param):
+  #     if event == cv2.EVENT_LBUTTONDBLCLK:
+  #         global b,g,r,xpos,ypos, clicked
+  #         clicked = True
+  #         xpos = x
+  #         ypos = y
+  #         b,g,r = img[y,x]
+  #         b = int(b)
+  #         g = int(g)
+  #         r = int(r)
         
-  cv2.namedWindow('image')
-  cv2.setMouseCallback('image',draw_function)
+  # cv2.namedWindow('image')
+  # cv2.setMouseCallback('image',draw_function)
 
   while(1):
 
-      cv2.imshow("image",img)
-      if (clicked):
+      # cv2.imshow("image",img)
+      # if (clicked):
     
           #cv2.rectangle(image, startpoint, endpoint, color, thickness)-1 fills entire rectangle 
-          cv2.rectangle(img,(20,20), (600,60), (b,g,r), -1)
+          # cv2.rectangle(img,(20,20), (600,60), (b,g,r), -1)
 
-          #Creating text string to display( Color name and RGB values )
-          text = getColorName(r,g,b) + ' R='+ str(r) +  ' G='+ str(g) +  ' B='+ str(b)
+          # #Creating text string to display( Color name and RGB values )
+          # text = getColorName(r,g,b) + ' R='+ str(r) +  ' G='+ str(g) +  ' B='+ str(b)
           
-          #cv2.putText(img,text,start,font(0-7),fontScale,color,thickness,lineType )
-          cv2.putText(img, text,(50,50),2,0.8,(255,255,255),2,cv2.LINE_AA)
+          # #cv2.putText(img,text,start,font(0-7),fontScale,color,thickness,lineType )
+          # cv2.putText(img, text,(50,50),2,0.8,(255,255,255),2,cv2.LINE_AA)
 
-          #For very light colours we will display text in black colour
-          if(r+g+b>=600):
-              cv2.putText(img, text,(50,50),2,0.8,(0,0,0),2,cv2.LINE_AA)
+          # #For very light colours we will display text in black colour
+          # if(r+g+b>=600):
+          #     cv2.putText(img, text,(50,50),2,0.8,(0,0,0),2,cv2.LINE_AA)
               
-          clicked=False
+          # clicked=False
 
-          #cv2.namedWindow('colors')
+          # #cv2.namedWindow('colors')
           
-          root = Tk()
-          root.title('rocommended colors')
-          root.geometry("600x600")
+          # root = Tk()
+          # root.title('rocommended colors')
+          # root.geometry("600x600")
 
-          my_canvas= Canvas(root, width=400, height= 500, bg="white")
+          # my_canvas= Canvas(root, width=400, height= 500, bg="white")
 
           #create rectangle
           if(r>=128 and r<=255) and (g>=0 and g<=160) and (b>=0 and b<=128):
@@ -95,10 +100,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "grey",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -111,9 +116,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "black",
-                  "color_2" : "navy",
-                  "color_3" : "gray",
+                  "black" : "rgb(0, 0, 0)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -128,10 +133,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -145,10 +150,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "beige",
-                  "color_3" : "black",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "beige" : "rgb(225, 198, 153)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -162,10 +167,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -179,10 +184,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "beige",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "beige" : "rgb(225, 198, 153)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -195,9 +200,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "brown",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                   "brown" : "rgb(161, 80, 19)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -211,9 +216,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "beige",
-                  "color_2" : "navy",
-                  "color_3" : "khaki",
+                  "beige" : "rgb(225, 198, 153)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "khaki" : "rgb(255, 87, 51)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -226,9 +231,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "navy",
-                  "color_2" : "brown",
-                  "color_3" : "black",
+                  "navy" : "rgb(0, 32, 91)",
+                  "brown" : "rgb(161, 80, 19)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -242,10 +247,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -259,9 +264,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "gray",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                  "grey" : "rgb(142, 142, 142)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -274,9 +279,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -289,9 +294,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -305,10 +310,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "brown",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "brown" : "rgb(161, 80, 19)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -321,9 +326,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "navy",
-                  "color_2" : "brown",
-                  "color_3" : "black",
+                  "navy" : "rgb(0, 32, 91)",
+                  "brown" : "rgb(161, 80, 19)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -336,9 +341,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -351,9 +356,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -367,10 +372,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "khaki",
-                  "color_2" : "navy",
-                  "color_3" : "black",
-                  "color_4" : "gray",
+                  "khaki" : "rgb(255, 87, 51)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "black" : "rgb(0, 0, 0)",
+                  "grey" : "rgb(142, 142, 142)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -384,10 +389,10 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "beige",
-                  "color_2" : "navy",
-                  "color_3" : "gray",
-                  "color_4" : "black",
+                  "beige" : "rgb(225, 198, 153)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "grey" : "rgb(142, 142, 142)",
+                  "black" : "rgb(0, 0, 0)",
                   }
             return jsonify({'Result':color_pallete})
 
@@ -400,9 +405,9 @@ def getColourPalatte():
 
             #   root.mainloop()
             color_pallete = {
-                  "color_1" : "white",
-                  "color_2" : "gray",
-                  "color_3" : "navy",
+                  "white" : "rgb(240, 240, 240)",
+                  "grey" : "rgb(142, 142, 142)",
+                  "navy" : "rgb(0, 32, 91)",
                   }
             return jsonify({'Result':color_pallete})
                   
