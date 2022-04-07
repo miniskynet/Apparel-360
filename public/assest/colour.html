@@ -1,0 +1,235 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Color Reccomendation</title>
+	<style>
+		.container {
+
+
+			margin-top: 50px;
+			margin-left: 75px;
+
+		}
+
+		#canvas {
+			margin-left: 50px;
+
+			border: 1px solid black;
+			background-position: center;
+		}
+
+		.block1 {
+
+			width: 850px;
+			height: 650px
+		}
+
+		.block2 {
+
+			margin-top: 50px;
+			margin-right: 50px;
+			float: right;
+			border: 1px solid black;
+			background-position: center;
+			text-align: center;
+		}
+
+
+
+
+		h2 {
+			margin-top: 20px;
+			text-align: center;
+
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Please insert an image of the cloth then click on the color of the cloth to get the reccommended colors</h2>
+	<div class="block2">
+		<p>Reccomended Colors</p>
+		<canvas id="canvas2" width="300" height="500"></canvas>
+
+
+	</div>
+	<div class="container">
+		<input type="file" id="fileinput" accept="image/*">
+	</div>
+	<div class="block1">
+		<canvas id="canvas"></canvas>
+	</div>
+	<p>Click on the image</p>
+
+
+
+
+	<script>
+		let fileInput = document.getElementById('fileinput');
+
+		let allColors = []
+
+		fileInput.addEventListener('change', function (ev) {
+
+			if (ev.target.files) {
+				let file = ev.target.files[0];
+				var reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onloadend = function (e) {
+
+					var image = new Image();
+					image.src = e.target.result;
+					image.onload = function (ev) {
+
+						var canvas = document.getElementById('canvas');
+
+						canvas.width = image.width;
+						canvas.height = image.height;
+
+						var ctx = canvas.getContext('2d');
+						ctx.drawImage(image, 0, 0);
+
+
+					}
+					//var canvas = document.getElementById('canvas');
+					function getElementPosition(obj) {
+						var curleft = 0, curtop = 0;
+
+						if (obj.offsetParent) {
+							do {
+								curleft += obj.offsetLeft;
+								curtop += obj.offsetTop;
+							} while (obj = obj.offsetParent);
+							console.log(curleft, curtop);
+							return { x: curleft, y: curtop };
+						}
+						return undefined;
+					}
+
+					function getEventLocation(element, event) {
+
+						// Relies on the getElementPosition function.
+						var pos = getElementPosition(element);
+						console.log(event.pageX);
+
+						return {
+							x: (event.pageX - pos.x),
+							y: (event.pageY - pos.y)
+						};
+					}
+
+					var mycanvas = document.getElementById('canvas2');
+					var ctx1 = mycanvas.getContext("2d");
+
+					canvas.addEventListener("click", async function (event) {
+						// const axios = require('axios')
+
+						// Get the coordinates of the click
+						var eventLocation = getEventLocation(this, event);
+						// Get the data of the pixel according to the location generate by the getEventLocation function
+						var context = this.getContext('2d');
+						var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data;
+						//console.log(pixelData[0]);	
+
+						var rgb = [pixelData[0], pixelData[1], pixelData[2], pixelData[3]];
+						//console.log(rgb);	
+
+						let beige;
+						let black;
+						let grey;
+						let khaki;
+
+						const data = await fetch('http://127.0.0.1:5000/generateColourPalattes', {
+							method: 'POST',
+							body: JSON.stringify({ rgbValues: rgb })
+						})
+
+						if (data) {
+							const res = await data.json()
+							const { Result: resObject } = res
+							console.log(resObject);
+							// beige = res['Result']['beige']
+							// black = res['Result']['black']
+							// grey = res['Result']['grey']
+							// khaki = res['Result']['khaki']
+
+							let initialHeight = 40
+
+							for (var key of Object.keys(resObject)) {
+								allColors.push(resObject[key])
+								ctx1.fillStyle = resObject[key];
+								ctx1.fillRect(50, initialHeight, 200, 50);
+								initialHeight += 100
+								console.log(key + " -> " + resObject[key]);
+
+							}
+
+
+							// ctx1.fillStyle = "rgb(200,0,200)";
+							// ctx1.fillRect(50, 40, 200, 50);
+
+							// ctx1.fillStyle = "rgb(200,0,200)";
+							// ctx1.fillRect(50, 140, 200, 50);
+
+							// ctx1.fillStyle = "rgb(200,0,200)";
+							// ctx1.fillRect(50, 240, 200, 50);
+
+							// allColors.map((x) => {
+
+							// 	return (
+							// 		<div>
+							// 			Hello
+							// 		</div>
+							// 	)
+							// })
+
+						}
+
+						// console.log(allColors);
+
+						// console.log(beige, black, grey, khaki)
+
+						// console.log(arr)
+						// var beige = data.Result['beige']
+						// var black = data.Result['black']
+						// var khaki = data.Result['khaki']
+						// var grey = data.Result['grey']
+
+						// console.log(beige, black, khaki, grey)
+						// axios.get('http://127.0.0.1:5000/generateColourPalattes', {
+						// rgbValues: rgb
+						// })					
+
+						// If transparency on the pixel , array = [0,0,0,0]
+						//if((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0)){
+						// Do something if the pixel is transparent
+						//}
+
+						// Convert it to HEX if you want using the rgbToHex method.
+						// var hex = "#" + ("000000" + rgbToHex(pixelData[0], pixelData[1], pixelData[2])).slice(-6);
+					}, false);
+
+				}
+				//var canvas = document.getElementById('canvas');
+
+
+			}
+		});
+
+		//for color reccomendation part in canvas2 on right side
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>
