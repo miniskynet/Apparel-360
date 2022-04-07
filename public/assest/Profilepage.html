@@ -11,7 +11,7 @@
   <a href="assest/HomePage.html" class="w3-button w3-bar-item">Home</a>
   <a href="#about us" class="w3-button w3-bar-item">About Us</a>
   <a href="#contact us" class="w3-button w3-bar-item">Contact Us</a>
-  <a href="Profile Page.html" class="w3-button w3-bar-item"><img class="proimg" src="assest/Images/profilepic.png" style="width:7%"></a>
+  <a href="Profile Page.html" class="w3-button w3-bar-item"><img class="proimg" src="Images/profilepic.png" style="width:7%"></a>
 </nav>
 <form action="signaction_page.php" method="post" style="border:1px solid #ccc">
 
@@ -21,9 +21,6 @@
 
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="PassWord" required>
-
-    <label><b>Confirm Password</b></label>
-    <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
 
     <label><b>First Name</b></label>
     <input type="text" placeholder="Enter FirstName" name="FirstName" required>
@@ -43,5 +40,59 @@
 	 <div class="clearfix">
       <button type="button" class="Asset Library">Asset Library</button>
 	 </div>
+   <div class="profile-pic-div">
+    <img src="Images/images1.jpg" id="photo">
+    <input type="file" id="file">
+    <label for="file" id="uploadBtn">Choose Photo</label>
+  </div>
+  
+  <script>
+  //declearing html elements
+
+    const imgDiv = document.querySelector('.profile-pic-div');
+    const img = document.querySelector('#photo');
+    const file = document.querySelector('#file');
+    const uploadBtn = document.querySelector('#uploadBtn');
+    
+    //if user hover on img div 
+    
+    imgDiv.addEventListener('mouseenter', function(){
+        uploadBtn.style.display = "block";
+    });
+    
+    //if we hover out from img div
+    
+    imgDiv.addEventListener('mouseleave', function(){
+        uploadBtn.style.display = "none";
+    });
+    
+    //lets work for image showing functionality when we choose an image to upload
+    
+    //when we choose a foto to upload
+    
+    file.addEventListener('change', function(){
+        //this refers to file
+        const choosedFile = this.files[0];
+    
+        if (choosedFile) {
+    
+            const reader = new FileReader(); //FileReader is a predefined function of JS
+    
+            reader.addEventListener('load', function(){
+                img.setAttribute('src', reader.result);
+            });
+    
+            reader.readAsDataURL(choosedFile);
+    
+            //Allright is done
+    
+            //please like the video
+            //comment if have any issue related to vide & also rate my work in comment section
+    
+            //And aslo please subscribe for more tutorial like this
+    
+            //thanks for watching
+        }
+    });</script>
 </form>
 </html>
