@@ -17,7 +17,7 @@ def getColourPalatte():
   g = img_path[1]
   b = img_path[2]
 
-  #Creating argument parser to take image path from command line
+  # Creating argument parser to take image path from command line
   # ap = argparse.ArgumentParser()
   # ap.add_argument('-i', '--image', required=True, help="Image Path")
   # args = vars(ap.parse_args())
