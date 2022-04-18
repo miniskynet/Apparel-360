@@ -4,67 +4,88 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="stylesheet" href="common_style.css.css">
 	<title>Color Reccomendation</title>
 	<style>
-		.container {
 
-
-			margin-top: 50px;
-			margin-left: 75px;
-
-		}
+.content{
+	margin: 30px;
+}
 
 		#canvas {
-			margin-left: 50px;
-
-			border: 1px solid black;
+			border: 1px solid rgb(67, 67, 67);
 			background-position: center;
+			width: 100%;
+			border-radius: 4px;
+		}
+
+		.flexbox{
+			display: flex;
+			justify-content: space-between;
+			padding: 30px;
 		}
 
 		.block1 {
-
-			width: 850px;
-			height: 650px
+			width: 50vw
 		}
 
 		.block2 {
-
-			margin-top: 50px;
-			margin-right: 50px;
-			float: right;
-			border: 1px solid black;
+			width: 40vw;
 			background-position: center;
-			text-align: center;
+			border: 1px solid rgb(67, 67, 67);
+			background-color: rgba(255, 255, 255, .3);
 		}
 
 
-
-
-		h2 {
-			margin-top: 20px;
-			text-align: center;
-
+		.block2 p{
+			margin: 20px 40px;
+			border-radius: 4px;
 		}
+
+
+		input[type=file]::file-selector-button {
+			padding: 10px 40px;
+			border-radius:6px;
+			background-color: #000000;
+			transition: 1s;
+			color: white; 
+			margin-right: 30px;
+			border: none;
+			}
+		input[type=file]{
+			border: 1px solid rgb(67, 67, 67);
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0, .1);
+			color: white;
+			font-size: 1.2em;
+		}
+		
 	</style>
 </head>
 
 <body>
-	<h2>Please insert an image of the cloth then click on the color of the cloth to get the reccommended colors</h2>
-	<div class="block2">
-		<p>Reccomended Colors</p>
-		<canvas id="canvas2" width="300" height="500"></canvas>
-
-
+	<div class="content">
+		
+	<h1>Find your best Suit</h1>
+	<p>Please insert an image of the cloth and then click on the color of the cloth to get the reccommended colors</p>
+</div>
+	
 	</div>
-	<div class="container">
-		<input type="file" id="fileinput" accept="image/*">
-	</div>
-	<div class="block1">
-		<canvas id="canvas"></canvas>
-	</div>
-	<p>Click on the image</p>
 
+	<div class="flexbox">
+
+		<div class="block1">
+			<input type="file" id="fileinput" accept="image/*">
+			<canvas id="canvas"></canvas>
+		</div>
+	
+		<div class="block2">
+			<p>Recomended Colors</p>
+			<canvas id="canvas2" width="300" height="500"></canvas>
+			</div>
+	
+	
+	</div>
 
 
 

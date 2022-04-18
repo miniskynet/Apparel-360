@@ -2,54 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
-	<link rel ="stylesheet" href ="common_style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel 360</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="common_style.css" />
 </head>
-<body><!-- Navigation -->
-<nav class="navigation">
-  <a href="assest/HomePage.html" class="navigation">Home</a>
-  <a href="#about us" class="navigation">About Us</a>
-  <a href="#contact us" class="navigation">Contact Us</a>
-  <a href= "Profilepage.html" class="w3-button w3-bar-item"><img class="proimg" src="Images/profilepic.png" style="width:7%"></a>
-</nav>
-<!-- Slide Show -->
-<section>
-  <img class="mySlides" src="Images/tailor.jpg" style="width:100%; height:500px;">
-  <img class="mySlides" src="Images/hangert.jpg" style="width:100%; height:500px;">
-  <img class="mySlides" src="Images/3shirts.jpg" style="width:100%; height:500px;">
-</section>
+<body>
 
-<div class="container">
-	      <a href="https://miniskynet.github.io/Unity_WebGL_build/"><img src="Images/shirt_icon.png" alt="folded" class="option"></a>
-				<a href="colour.html"><img src="Images/colorpallet.png" alt="t-shirts" class="option"></a>	
-	</div>
-
-<div class="b1">
-  <a href="https://miniskynet.github.io/Unity_WebGL_build/"><button id="signup_button" class="indexbtn2">Customize</button></a>
-</div>
-	
-
-	
-	
-<script>
-// Automatic Slideshow - change image every 3 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 3000);
-}
-
-</script>
-
-
+    <div class="d-md-flex justify-content-between align-items-center">
+        <div class="d-flex flex-column">
+            <img src="img/logo.png" alt="" srcset="" class="nav-logo img-fluid mb-lg-5 mb-4 ms-lg-5 ms-4 pt-4 pt-lg-0">
+            <div class="pt-lg-4 px-lg-5 px-4">
+                <h1 class="hero-title fw-bolder mb-3">Be your own <span>Model</span></h1>
+                <p class="hero-para mb-5">Apparel 360 is an augmented reality based web application which helps you preview your tailor made clothes into a 3D model</p>
+    
+    
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <a href="colour.html">
+                            <button class="button-card px-lg-5 py-4 h-100 w-100">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img src="img/match-cloth-img.png" alt="" srcset="" class="button-card-img">
+                                    <div class="d-flex mt-3">
+                                        <p class="fw-bold">Find me a Matching Cloth
+                                            <span><i class="fa fa-angle-right ml-5 fw-bold" aria-hidden="true"></i></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <a href="https://miniskynet.github.io/Unity_WebGL_build/">
+                                    <button class="button-card px-lg-5 py-4 w-100">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <img src="img/new-shirt-img.png" alt="" srcset="" class="button-card-img">
+                                            <div class="d-flex mt-3">
+                                                <p class="fw-bold">New Shirt | T-shirt
+                                                    <span><i class="fa fa-angle-right ml-5 fw-bold" aria-hidden="true"></i></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="">
+          <img src="img/home-main-img.png" alt="" srcset="" class=" home-img">
+        </div>
+    </div>
+    
 </body>
 </html>
