@@ -18,23 +18,23 @@ class Home extends React.Component{
     </div>
 	<div class="index_images">
 		<div class="index_img">
-			<img src = "assest/Images/Black-shirt.png" width="150" height="165" class="round_images" />
+			<img src = "assest/img/Black-shirt.png" width="150" height="165" class="round_images" />
 		</div>
 		<div class="index_img1">
-			<img src = "assest/Images/Black-shirt1.png" width="150" height="165" class="round_images" />
+			<img src = "assest/img/Black-shirt1.png" width="150" height="165" class="round_images" />
 		</div>
 		<div class="index_img2">
-			<img src = "assest/Images/Red-Shirt.jpg" width="330" height="310" class="round_images" />
+			<img src = "assest/img/Red-Shirt.jpg" width="330" height="310" class="round_images" />
 		</div>
 	</div>
 		<div class="index_img3">
-			<img src = "assest/Images/Black-shirt2.png" width="330" height="310" class="round_images" />
+			<img src = "assest/img/Black-shirt2.png" width="330" height="310" class="round_images" />
 		</div>
 		<div class="index_img4">
-			<img src = "assest/Images/Grey-shirt.png" width="150" height="165" class="round_images" />
+			<img src = "assest/img/Grey-shirt.png" width="150" height="165" class="round_images" />
 		</div>	
 		<div class="index_img5">
-			<img src = "assest/Images/White-shirt.png" width="150" height="165" class="round_images" />
+			<img src = "assest/img/White-shirt.png" width="150" height="165" class="round_images" />
 		</div>	
         </div>
         </div>
