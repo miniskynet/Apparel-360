@@ -103,3 +103,450 @@ input[type="text"].input[type="password"] {
     width: 30%;
   }
 }
+
+.proimg{
+	position: absolute;
+   top: 25px;
+   right: -2px;
+}
+
+* {box-sizing: border-box}
+----------------------------------------------------
+/*Index Page*/
+
+.box{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding-top: 10px;
+	width: 75%;
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 60%;
+	border: 2px solid black
+}
+
+#login_button{
+	 outline-color:#005ce6;
+	 outline-style: ridge;
+	 border-radius: 4px;
+	 height: 45px; 
+	 width: 110px;
+}
+
+#signup_button{
+	 outline-color:#005ce6;
+	 outline-style: ridge;
+	 border-radius: 4px;
+	 height: 45px; 
+	 width: 110px;
+}
+
+.indexbtn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-left: -10px;
+	margin-right: 180px;
+	margin-top: 10px;
+}
+
+.indexbtn2{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-left: -10px;
+	margin-right: 50px;
+	margin-top: 10px;
+}
+
+.welcomepage_button{
+	height: 40px; 
+	width: 220px;
+	border-radius: 4px;
+	position: center;
+}
+
+.description{
+	top: 20%;
+	margin: auto;
+	padding-top: 170px;
+	width: 40%;
+	position: relative;
+	margin-left: 20px;
+	text-align: 20px;
+  padding-left: 75px;
+}
+
+.round_images{
+	border-radius: 6px;
+}
+
+.index_img {
+  float: right;
+  width: 13%;
+  padding: 10px;
+  position: absolute;
+  top: 75px;
+  right: 800px;
+}
+.index_img img {
+  margin-top: 12px;
+}
+
+.index_img1 {
+  float: right;
+  width: 13%;
+  padding: 10px;
+  position: absolute;
+  top: 75px;
+  right: 600px;
+}
+
+.proimg{
+  display: block;
+  margin-left: 70%;
+  width: 50%;
+  border-radius: 50%;
+  
+}
+
+.index_img1 img{
+  margin-top: 12px;
+}
+
+.index_img2 {
+  float: right;
+  width: 25%;
+  padding: 10px;
+  position: absolute;
+  top: 85px;
+  right: 210px;
+}
+
+.index_img2 img {
+ margin-top: 0;;
+}
+
+.index_img3 {
+  float: right;
+  width: 27%;
+  padding: 10px;
+  position: absolute;
+  top: 280px;
+  right: 585px;
+}
+
+.index_img3 img {
+  margin-top: 10px;
+}
+
+.index_img4 {
+  float: right;
+  width: 15%;
+  padding: 10px;
+  position: absolute;
+  top: 435px;
+  right: 365px;
+}
+
+.index_img4 img {
+  margin-top: 0px;
+}
+
+.index_img5 {
+  float: right;
+  width: 25%;
+  padding: 10px;
+  position: absolute;
+  top: 423px;
+  right: 35px;
+}
+
+.index_img5 img {
+  margin-top: 12px;
+}
+
+.index_images:after {
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 50%;
+  margin-top: 100px;
+}
+----------------------------------------------------
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+.logCancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+----------------------------------------------
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #151617;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+	.option{
+	  width:120px;
+	  height:100px;
+	  border: 1px solid #000000;
+	  margin: 30px;
+	  margin-bottom: 2px;
+	  
+	}
+	
+	.container{
+
+	  margin-left:260px;
+	  width: 45%;
+	  
+	  
+	  
+	}
+
+  .container1{
+
+	  margin-left:260px;
+	  width: 45%;
+    color: white;
+	  
+	  
+	  
+	}
+	
+	
+	
+	.option:hover{
+	  opacity: 0.8;  
+   }
+   
+  
+
+
+h1 {
+  font-size: 50px;
+  color: white;
+  
+}
+p {
+  font-size: 20px;
+  color: white;
+}
+.b1 {
+  position: absolute;
+  top: 730px;
+  right: 1045px;
+}
+h2 {
+  color: white;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10006;";
+}
+.profile-pic-div{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid grey;
+  right: 35px
+}
+
+#photo{
+  height: 100%;
+  width: 100%;
+}
+
+#file{
+  display: none;
+}
+
+#uploadBtn{
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: wheat;
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  display: none;
+}
+
+.proimg2{
+	position: relative;
+   top: -9px;
+   right: -1150px;
+
+}
