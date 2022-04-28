@@ -60,6 +60,11 @@
 			font-size: 1.2em;
 		}
 		
+		p{
+		
+		    font-size: 20px;
+		}
+		
 	</style>
 </head>
 
@@ -67,7 +72,7 @@
 	<div class="content">
 		
 	<h1>Find your best Suit</h1>
-	<p>Please insert an image of the cloth and then click on the color of the cloth to get the reccommended colors</p>
+	<h3>Please insert an image of the cloth and then click on the color of the cloth to get the recommended colors</h3>
 </div>
 	
 	</div>
@@ -80,7 +85,10 @@
 		</div>
 	
 		<div class="block2">
-			<p>Recomended Colors</p>
+		    <p><b>User Selected Color : </b></p>
+			<p id="selected"></p><br>
+			
+			<p><b>Recommended Colors : </b></p>
 			<canvas id="canvas2" width="300" height="500"></canvas>
 			</div>
 	
@@ -180,12 +188,22 @@
 
 							let initialHeight = 40
 
+                            let count=0
+							
 							for (var key of Object.keys(resObject)) {
-								allColors.push(resObject[key])
-								ctx1.fillStyle = resObject[key];
-								ctx1.fillRect(50, initialHeight, 200, 50);
-								initialHeight += 100
-								console.log(key + " -> " + resObject[key]);
+							    if(count==0){
+								    document.getElementById("selected").innerHTML=resObject[key]
+								    console.log(key)
+									console.log(resObject[key])
+								}
+								else{
+									allColors.push(resObject[key])
+									ctx1.fillStyle = resObject[key];
+									ctx1.fillRect(50, initialHeight, 200, 50);
+									initialHeight += 100
+									console.log(key + " -> " + resObject[key]);
+								}
+								count++;
 
 							}
 
