@@ -103,9 +103,6 @@ input[type="text"].input[type="password"] {
     width: 30%;
   }
 }
-<<<<<<< Updated upstream
-=======
-
 .proimg{
 	position: absolute;
    top: 25px;
@@ -550,6 +547,5 @@ input[type=submit] {
 	position: relative;
    top: -9px;
    right: -1150px;
-
 }
->>>>>>> Stashed changes
+
