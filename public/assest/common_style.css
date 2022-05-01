@@ -74,7 +74,7 @@ input[type="text"].input[type="password"] {
 }
 
 .button-card {
-  background-color: #e1e1e1;
+  background-color: #bcbebc;
   border: none;
   border-radius: 10px;
 }
@@ -103,7 +103,6 @@ input[type="text"].input[type="password"] {
     width: 30%;
   }
 }
-
 .proimg{
 	position: absolute;
    top: 25px;
@@ -354,8 +353,8 @@ hr {
 
 /* Set a style for all buttons */
 button {
-  background-color: #151617;
-  color: white;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -548,5 +547,5 @@ input[type=submit] {
 	position: relative;
    top: -9px;
    right: -1150px;
-
 }
+
