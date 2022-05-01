@@ -431,7 +431,18 @@ def getColourPalatte():
                   "navy" : "rgb(0, 32, 91)",
                   }
             return jsonify({'Result':color_pallete})
+
+          else:
+             color_pallete = {
+                  "User selected" : text ,
+                  "beige" : "rgb(225, 198, 153)",
+                  "navy" : "rgb(0, 32, 91)",
+                  "grey" : "rgb(142, 142, 142)",
+                  "black" : "rgb(0, 0, 0)",
+                  }
+             return jsonify({'Result':color_pallete})
                   
+
 
           
         
